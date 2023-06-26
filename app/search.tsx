@@ -7,6 +7,7 @@ import { useTransition } from 'react';
 export default function Search({ disabled }: { disabled?: boolean }) {
   const { replace } = useRouter();
   const pathname = usePathname();
+
   const [isPending, startTransition] = useTransition();
 
   function handleSearch(term: string) {

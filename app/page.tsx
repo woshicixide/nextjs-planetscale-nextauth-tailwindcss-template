@@ -6,7 +6,6 @@ import UsersTable from './table';
 // import prisma from "@/lib/prisma";
 import prisma from '../lib/prisma';
 
-
 export const dynamic = 'force-dynamic';
 
 export default async function IndexPage({
@@ -14,19 +13,16 @@ export default async function IndexPage({
 }: {
   searchParams: { q: string };
 }) {
-
   const search = searchParams.q ?? '';
-  console.log('search:', search);
 
   const users = await prisma.user2.findMany({
     where: {
       name: {
-        contains: search,
-      },
-    },
+        contains: search
+      }
+    }
   });
   console.log('users:', users);
-
 
   // const users = await queryBuilder
   //   .selectFrom('users')
