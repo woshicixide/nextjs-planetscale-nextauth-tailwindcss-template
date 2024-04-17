@@ -15,7 +15,7 @@ export default async function IndexPage({
 }) {
   const search = searchParams.q ?? '';
 
-  const users = await prisma.user2.findMany({
+  const users = await prisma.Users.findMany({
     where: {
       name: {
         contains: search
